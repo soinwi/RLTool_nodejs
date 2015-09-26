@@ -1,6 +1,31 @@
 var fs = require("fs");
 var express = require("express");
-var routing = require('./routing');
+var routing = require('./rest_api/routing');
+var peopleRouting = require("./rest_api/peopleRouting");
+var dbAccess = require("./db/dbAccess");
+
+var app = express();
+
+
+var dbaccess = new dbAccess("testsDB.sqlite3");
+app.use('/prototype', new routing({'abc':'def'}).routing);
+app.use('/people', new peopleRouting(dbaccess).routing);
+
+
+app.get('/test', function(req, res){
+    res.end("hello, world");
+
+});
+
+var server = app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
+  var addr = server.address();
+  console.log("REST server listening at", addr.address + ":" + addr.port);
+});
+
+
+
+
+
 
 /*var exists = fs.existsSync(file);
 
@@ -30,19 +55,3 @@ function init(){
 }
 
 init();*/
-
-
-var app = express();
-
-app.use('/api', routing);
-
-
-app.get('/test', function(req, res){
-    res.end("hello, world");
-
-});
-
-var server = app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
-  var addr = server.address();
-  console.log("REST server listening at", addr.address + ":" + addr.port);
-});

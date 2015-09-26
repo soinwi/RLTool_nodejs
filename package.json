@@ -1,10 +1,10 @@
 {
-  "name": "chat-example",
+  "name": "RLTool-NodeVersion",
   "version": "0.0.0",
-  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
-  "main": "server.js",
+  "description": "A first iteration on a node based RLTool.",
+  "main": "server/test_DB.js",
   "repository": "",
-  "author": "Mostafa Eweda <mo.eweda@gmail.com>",
+  "author": "David Sommer <development@soinwi.ch>",
   "dependencies": {
     "async": "~0.2.8",
     "express": "^4.13.3",
