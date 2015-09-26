@@ -13,7 +13,7 @@ dba.getAllPeople(function(people)
 var newperson = new person();
 newperson.firstName = "David";
 newperson.lastName = "Sommer";
-newperson.birthDate = new Date(1990,11,30);
+newperson.birthDate = new Date(1990,11,30).toDateString();
 console.log(newperson.birthDate.toDateString());
 dba.addPerson(newperson, function(err,person)
 {
