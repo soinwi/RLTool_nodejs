@@ -1,2 +1,3 @@
 curl --header "Content-type: application/json" --request PUT --data '{"id":3,"firstName":"Hans-Friedrich Paul","lastName":"Grünfelder","birthDate":"1959-08-20T00:00:00.000Z"}' https://rltool-nodejs-soinwi-1.c9.io/people/
 
+curl --header "Content-type: application/json" --request PUT --data '{"id":-1,"firstName":"Hans-Friedrich Paul","lastName":"Grünfelder","birthDate":"1959-08-20T00:00:00.000Z"}' https://rltool-nodejs-soinwi-1.c9.io/people/
