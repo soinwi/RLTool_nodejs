@@ -84,7 +84,7 @@ function dbAccess(name_)
         query.get(
             personId_, 
             function(err,row){
-                if(err === null)
+                if(err === null && row != undefined)
                 {
                     var person = new Person();
                     person.firstName = row.fn;

@@ -16,6 +16,15 @@ function PeopleRouting(dbObject_) {
         }
     );
     
+    this.routing.get(
+        '/:id',
+        function(req, res) {
+            _dbObject.getPersonById(
+                req.params.id, 
+                function(err, person_){res.send(person_)}
+                );
+        });
+    
 }
 
 module.exports = PeopleRouting;
