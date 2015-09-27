@@ -1,6 +1,4 @@
 var express = require("express");
-var sqlite3 = require("sqlite3");
-var path = require("path");
 var bodyParser = require("body-parser");
 
 
@@ -30,7 +28,7 @@ function PeopleRouting(dbObject_) {
             );
         });
 
-    this.routing.put(
+    this.routing.post(
         '/',
         bodyParser.json(),
         function(req, res) {

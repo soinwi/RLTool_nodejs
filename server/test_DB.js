@@ -2,6 +2,7 @@ var fs = require("fs");
 var express = require("express");
 var routing = require('./rest_api/routing');
 var peopleRouting = require("./rest_api/peopleRouting");
+var resultsRouting = require("./rest_api/resultsRouting");
 var dbAccess = require("./db/dbAccess");
 
 var app = express();
@@ -10,6 +11,7 @@ var app = express();
 var dbaccess = new dbAccess("testsDB.sqlite3");
 app.use('/prototype', new routing({'abc':'def'}).routing);
 app.use('/people', new peopleRouting(dbaccess).routing);
+app.use('/results', new resultsRouting(dbaccess).routing);
 
 
 app.get('/test', function(req, res){
