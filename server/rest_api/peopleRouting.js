@@ -27,6 +27,22 @@ function PeopleRouting(dbObject_) {
                 }
             );
         });
+        
+        this.routing.put(
+            '/:id',
+            bodyParser.json(),
+            function(req,res){
+               _dbObject.addPerson(req.body, function(err,person_){
+                   if(err === null)
+                   {
+                       res.send(person_);
+                   }
+                   else
+                   {
+                       res.send(err);
+                   }
+               })
+            });
 
     this.routing.post(
         '/',
@@ -41,6 +57,8 @@ function PeopleRouting(dbObject_) {
                 }
             })
         });
+        
+        
 
 }
 
