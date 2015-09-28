@@ -7,10 +7,24 @@
   "author": "David Sommer <development@soinwi.ch>",
   "dependencies": {
     "async": "~0.2.8",
+    "backbone": "^1.2.3",
     "body-parser": "^1.14.0",
+    "browserify-middleware": "^7.0.0",
     "express": "^4.13.3",
+    "jquery": "^2.1.4",
     "nodeunit": "^0.9.1",
     "socket.io": "~0.9.14",
-    "sqlite3": "^3.1.0"
+    "sqlite3": "^3.1.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "nodemon": "^1.7.1",
+    "watchify": "^3.4.0"
+  },
+  "scripts": {
+    "watch": "watchify client/app.js -o client/index.js -v",
+    "build": "browserify client/app.js -o client/index.js",
+    "start": "npm run watch & nodemon server/test_DB.js"
   }
 }

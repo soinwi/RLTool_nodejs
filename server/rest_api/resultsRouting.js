@@ -8,7 +8,7 @@ function ResultsRouting(dbObject_) {
     _this.routing = new express.Router();
 
     _this.routing.get(
-        '/listAll',
+        '/',
         function(req, res) {
             _dbObject.getAllResults(function(results_) {
                 res.send(results_);
@@ -25,6 +25,7 @@ function ResultsRouting(dbObject_) {
                         res.send(result_);
                     }
                     else {
+                        
                         res.send(err);
                     }
 

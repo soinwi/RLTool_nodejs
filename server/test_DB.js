@@ -1,4 +1,5 @@
 var fs = require("fs");
+var path = require("path");
 var express = require("express");
 var routing = require('./rest_api/routing');
 var peopleRouting = require("./rest_api/peopleRouting");
@@ -13,9 +14,11 @@ app.use('/prototype', new routing({'abc':'def'}).routing);
 app.use('/people', new peopleRouting(dbaccess).routing);
 app.use('/results', new resultsRouting(dbaccess).routing);
 
+app.use('/', express.static(path.resolve(__dirname, '../client')));
+
 
 app.get('/test', function(req, res){
-    res.end("hello, world");
+    res.end("hello, dear world");
 
 });
 

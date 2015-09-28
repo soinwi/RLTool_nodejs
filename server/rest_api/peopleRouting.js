@@ -9,7 +9,7 @@ function PeopleRouting(dbObject_) {
     this.routing = new express.Router();
 
     this.routing.get(
-        '/listAll',
+        '/',
         function(req, res) {
             _dbObject.getAllPeople(function(people_) {
                 res.send(people_)
