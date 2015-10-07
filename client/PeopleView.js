@@ -28,6 +28,7 @@ var PeopleView = Backbone.View.extend({
       _this.$el.append(new PersonView({model: m}).render().el);
     });
     
+    
   }
 });
 
