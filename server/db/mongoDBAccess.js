@@ -1,7 +1,6 @@
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
-var url = 'mongodb://localhost:27017/test';
 
 
 function mongoDBAccess(name_) {
@@ -14,7 +13,12 @@ function mongoDBAccess(name_) {
                 "_id": new ObjectId(id_)
             });
             cursor.toArray(function(err, array) {
-                callback_(null, array[0]);
+                if (err) {
+                    callback_(err, null);
+                }
+                else {
+                    callback_(null, array[0]);
+                }
                 mongoCallback();
             });
         };
@@ -29,8 +33,6 @@ function mongoDBAccess(name_) {
             this.updatePerson(person_, callback_);
         }
         else {
-
-
             var insertPerson = function(db, mongoCallback) {
                 db.collection('people').insertOne(
                     person_,
@@ -56,7 +58,12 @@ function mongoDBAccess(name_) {
                 },
                 person_,
                 function(err, result) {
-                    callback_(null, result.ops[0]);
+                    if (err) {
+                        callback_(err, null);
+                    }
+                    else {
+                        callback_(null, result.ops[0]);
+                    }
                     mongoCallback();
                 }
             );
@@ -69,7 +76,12 @@ function mongoDBAccess(name_) {
         var getAll = function(db, mongoCallback) {
             var allCursor = db.collection('people').find();
             allCursor.toArray(function(err, people) {
-                callback_(people);
+                if (err) {
+                    callback_([]);
+                }
+                else {
+                    callback_(people);
+                }
                 mongoCallback();
             });
         };
@@ -106,11 +118,16 @@ function mongoDBAccess(name_) {
                 },
                 result_,
                 function(err, result) {
-                    callback_(null, result.ops[0]);
+                    if (err) {
+                        callback_(err, null);
+                    }
+                    else {
+                        callback_(null, result.ops[0]);
+                    }
                     mongoCallback();
                 }
-            )
-        }
+            );
+        };
 
         run(updateRes);
     };
@@ -140,24 +157,30 @@ function mongoDBAccess(name_) {
             var res = col.findOne({
                 "_id": objectId
             });
-            res.then(function(doc){
-               callback_(null, doc);
-               mongoCallback();
+            res.then(function(doc) {
+                callback_(null, doc);
+                mongoCallback();
             });
         });
     };
-    
-    _this.getResultsByPersonId = function(personId_, callback_){
-        run(function(db, mongoCallback){
-            var persObjId = new ObjectId(personId_);
-            var cursor = db.collection('results').find(
-                {"personId": personId_});
-                
-            cursor.toArray(function(err, array){
-                callback_(array);
+
+    _this.getResultsByPersonId = function(personId_, callback_) {
+        run(function(db, mongoCallback) {
+            //var persObjId = new ObjectId(personId_);
+            var cursor = db.collection('results').find({
+                "personId": personId_
+            });
+
+            cursor.toArray(function(err, array) {
+                if (err) {
+                    callback_([]);
+                }
+                else {
+                    callback_(array);
+                }
                 mongoCallback();
             });
-        });  
+        });
     };
 
 
@@ -174,6 +197,6 @@ function mongoDBAccess(name_) {
         });
     }
 
-};
+}
 
 module.exports = mongoDBAccess;
