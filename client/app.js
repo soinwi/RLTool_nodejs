@@ -10,9 +10,9 @@ var PersonView = require("./PersonView");
 Backbone.$ = $;
 
 
-document.writeln("hello world!");
+document.writeln("hello world5!");
 
-console.log("another blabla (again)...");
+console.log("another blabls blupp (again)...");
 
 var pc = new PeopleCollection();
 
