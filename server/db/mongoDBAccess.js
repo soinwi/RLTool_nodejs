@@ -77,6 +77,89 @@ function mongoDBAccess(name_) {
         run(getAll);
     };
 
+    _this.addResult = function(result_, callback_) {
+        if (result_._id) {
+            _this.updateResult(result_, callback_);
+        }
+        else {
+            var insertResult = function(db, mongoCallback) {
+                db.collection('results').insertOne(
+                    result_,
+                    function(err, res) {
+                        assert.equal(err, null);
+                        callback_(null, res.ops[0]);
+                        mongoCallback();
+                    }
+                );
+            };
+
+            run(insertResult);
+        }
+    };
+
+    _this.updateResult = function(result_, callback_) {
+        var updateRes = function(db, mongoCallback) {
+            var objectId = new ObjectId(result_._id);
+            result_._id = objectId;
+            db.collection('results').replaceOne({
+                    "_id": result_._id
+                },
+                result_,
+                function(err, result) {
+                    callback_(null, result.ops[0]);
+                    mongoCallback();
+                }
+            )
+        }
+
+        run(updateRes);
+    };
+
+    _this.getAllResults = function(callback_) {
+        run(
+            function(db, mongoCallback) {
+                var allResCursors = db.collection('results').find();
+                allResCursors.toArray(function(err, array) {
+                    if (err) {
+                        callback_(err, null);
+                    }
+                    else {
+                        callback_(array);
+                    }
+                    mongoCallback();
+
+                });
+
+            });
+    };
+
+    _this.getResultById = function(resultId_, callback_) {
+        run(function(db, mongoCallback) {
+            var objectId = new ObjectId(resultId_);
+            var col = db.collection('results');
+            var res = col.findOne({
+                "_id": objectId
+            });
+            res.then(function(doc){
+               callback_(null, doc);
+               mongoCallback();
+            });
+        });
+    };
+    
+    _this.getResultsByPersonId = function(personId_, callback_){
+        run(function(db, mongoCallback){
+            var persObjId = new ObjectId(personId_);
+            var cursor = db.collection('results').find(
+                {"personId": personId_});
+                
+            cursor.toArray(function(err, array){
+                callback_(array);
+                mongoCallback();
+            });
+        });  
+    };
+
 
     function run(function_) {
         MongoClient.connect(url, function(err, db) {

@@ -5,4 +5,4 @@ curl --header "Content-type: application/json" --request POST --data '{"firstNam
 
 
 //create results
-curl --header "Content-type: application/json" --request POST --data '{"personId":5,"result":13.37,"description":"additional, optional description"}' https://rltool2-soinwi.c9.io/results/
+curl --header "Content-type: application/json" --request POST --data '{"personId":"561bccad6d128c0a6413cd8d","result":13.37,"description":"additional, optional description"}' https://rltool2-soinwi.c9.io/results/
