@@ -38,7 +38,7 @@ var PersonView = Backbone.View.extend({
         var _this = this;
         console.log(e);
         /*alert("hi, i got clicked: " + e);*/
-        this.model.set("firstName", "some new testname");
+        this.model.set("firstName", "abc");
         this.model.save(this.model.toJSON(), {
             success: function() {
                 _this.model.fetch({

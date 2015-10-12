@@ -15,14 +15,13 @@ var PersonModel = Backbone.Model.extend({
    defaults: {
        firstName: "",
        lastName: "",
-       id: -1,
        birthDate: new Date()
    },
    
    fromResponse: function(resp){
       this.set("firstName", resp.firstName);
       this.set("lastName", resp.lastName);
-      this.set("id", resp.id);
+      this.set("_id", resp._id);
       this.set("birthDate", new Date(resp.birthDate));
    }
    

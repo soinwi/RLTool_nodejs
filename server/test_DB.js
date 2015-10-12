@@ -4,12 +4,15 @@ var express = require("express");
 var routing = require('./rest_api/routing');
 var peopleRouting = require("./rest_api/peopleRouting");
 var resultsRouting = require("./rest_api/resultsRouting");
-var dbAccess = require("./db/dbAccess");
+//var dbAccess = require("./db/dbAccess");
+var mongoDBAccess = require("./db/mongoDBAccess");
 
 var app = express();
 
 
-var dbaccess = new dbAccess("testsDB.sqlite3");
+//var dbaccess = new dbAccess("testsDB.sqlite3");
+var dbaccess = new mongoDBAccess("test");
+
 app.use('/prototype', new routing({'abc':'def'}).routing);
 app.use('/people', new peopleRouting(dbaccess).routing);
 app.use('/results', new resultsRouting(dbaccess).routing);
