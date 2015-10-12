@@ -81,14 +81,13 @@ var PersonModel = Backbone.Model.extend({
    defaults: {
        firstName: "",
        lastName: "",
-       id: -1,
        birthDate: new Date()
    },
    
    fromResponse: function(resp){
       this.set("firstName", resp.firstName);
       this.set("lastName", resp.lastName);
-      this.set("id", resp.id);
+      this.set("_id", resp._id);
       this.set("birthDate", new Date(resp.birthDate));
    }
    
@@ -173,29 +172,33 @@ console.log("another blabls blupp (again)...");
 
 var pc = new PeopleCollection();
 
-pc.bind('reset', function(){
-    console.log( "reset: "); 
-    console.log(pc); 
-    
-    var pv = new PersonView({model: pc.last()});
-    pv.render();
-    
-    
-var pw = new PeopleView({collection: pc});
-pw.render();
+pc.bind('reset', function() {
+    console.log("reset: ");
+    console.log(pc);
+
+    //var pv = new PersonView({model: pc.last()});
+    //pv.render();
+
+
+    var pw = new PeopleView({
+        collection: pc
+    });
 
 });
-pc.fetch({success: function(coll,response,options){
-    console.log("fetch finished");
-    console.log("collection: " + JSON.stringify(coll));
-    console.log("response: " + JSON.stringify(response));
-    console.log("options: " + JSON.stringify(options));
-    
-}, reset: true, error: function() { console.log("error"); console.log(arguments); }});
+pc.fetch({
+    success: function(coll, response, options) {
+        console.log("fetch finished");
+        console.log("collection: " + JSON.stringify(coll));
+        console.log("response: " + JSON.stringify(response));
+        console.log("options: " + JSON.stringify(options));
 
-
-
-
+    },
+    reset: true,
+    error: function() {
+        console.log("error");
+        console.log(arguments);
+    }
+});
 
 },{"./PeopleCollection":1,"./PeopleView":2,"./PersonModel":3,"./PersonView":4,"backbone":6,"jquery":7,"underscore":8}],6:[function(require,module,exports){
 (function (global){

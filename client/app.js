@@ -16,26 +16,30 @@ console.log("another blabls blupp (again)...");
 
 var pc = new PeopleCollection();
 
-pc.bind('reset', function(){
-    console.log( "reset: "); 
-    console.log(pc); 
-    
-    var pv = new PersonView({model: pc.last()});
-    pv.render();
-    
-    
-var pw = new PeopleView({collection: pc});
-pw.render();
+pc.bind('reset', function() {
+    console.log("reset: ");
+    console.log(pc);
+
+    //var pv = new PersonView({model: pc.last()});
+    //pv.render();
+
+
+    var pw = new PeopleView({
+        collection: pc
+    });
 
 });
-pc.fetch({success: function(coll,response,options){
-    console.log("fetch finished");
-    console.log("collection: " + JSON.stringify(coll));
-    console.log("response: " + JSON.stringify(response));
-    console.log("options: " + JSON.stringify(options));
-    
-}, reset: true, error: function() { console.log("error"); console.log(arguments); }});
+pc.fetch({
+    success: function(coll, response, options) {
+        console.log("fetch finished");
+        console.log("collection: " + JSON.stringify(coll));
+        console.log("response: " + JSON.stringify(response));
+        console.log("options: " + JSON.stringify(options));
 
-
-
-
+    },
+    reset: true,
+    error: function() {
+        console.log("error");
+        console.log(arguments);
+    }
+});

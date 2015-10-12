@@ -25,6 +25,6 @@
   "scripts": {
     "watch": "watchify client/app.js -o client/index.js -v",
     "build": "browserify client/app.js -o client/index.js",
-    "start": "npm run watch & nodemon --debug server/test_DB.js"
+    "start": "npm run watch & nodemon server/test_DB.js"
   }
 }

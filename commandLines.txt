@@ -1,7 +1,8 @@
 //create people
-curl --header "Content-type: application/json" --request POST --data '{"id":3,"firstName":"Hans-Friedrich Paul","lastName":"Grünfelder","birthDate":"1959-08-20T00:00:00.000Z"}' https://rltool-nodejs-soinwi-1.c9.io/people/
-curl --header "Content-type: application/json" --request POST --data '{"id":-1,"firstName":"Hans-Friedrich Paul","lastName":"Grünfelder","birthDate":"1959-08-20T00:00:00.000Z"}' https://rltool-nodejs-soinwi-1.c9.io/people/
+curl --header "Content-type: application/json" --request POST --data '{"firstName":"Hans-Friedrich Paul","lastName":"Grünfelder","birthDate":"1959-08-20T00:00:00.000Z"}' https://rltool2-soinwi.c9.io/people/
+curl --header "Content-type: application/json" --request POST --data '{"firstName":"Hans-Friedrich Paul","lastName":"Grünfelder","birthDate":"1959-08-20T00:00:00.000Z"}' https://rltool2-soinwi.c9.io/people/
+curl --header "Content-type: application/json" --request POST --data '{"firstName":"David","lastName":"Sommer","birthDate":"1990-12-30T00:00:00.000Z"}' https://rltool2-soinwi.c9.io/people/
 
 
 //create results
-curl --header "Content-type: application/json" --request POST --data '{"id":-1,"personId":5,"result":13.37,"description":"additional, optional description"}' https://rltool-nodejs-soinwi-1.c9.io/results/
+curl --header "Content-type: application/json" --request POST --data '{"personId":5,"result":13.37,"description":"additional, optional description"}' https://rltool2-soinwi.c9.io/results/
