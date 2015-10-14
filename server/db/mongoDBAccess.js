@@ -187,7 +187,7 @@ function mongoDBAccess(name_) {
     function run(function_) {
         MongoClient.connect(url, function(err, db) {
             assert.equal(null, err);
-            console.log("Connected correctly to server.");
+            //console.log("Connected correctly to server.");
 
             function_(db, function() {
                 db.close();

@@ -57,7 +57,7 @@ function ResultsRouting(dbObject_) {
                 else {
                     res.send(err);
                 }
-            })
+            });
         });
 
 }
