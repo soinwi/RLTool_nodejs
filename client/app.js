@@ -27,6 +27,7 @@ pc.bind('reset', function() {
     var pw = new PeopleView({
         collection: pc
     });
+    //pw.render();
 
 });
 pc.fetch({
