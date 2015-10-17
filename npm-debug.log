@@ -1,26 +1,27 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/home/ubuntu/.nvm/v0.10.35/bin/node',
 1 verbose cli   '/home/ubuntu/.nvm/v0.10.35/bin/npm',
-1 verbose cli   'start' ]
+1 verbose cli   'run',
+1 verbose cli   'watch' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.35
-4 verbose run-script [ 'prestart', 'start', 'poststart' ]
-5 info prestart RLTool-NodeVersion@0.0.0
-6 info start RLTool-NodeVersion@0.0.0
+4 verbose run-script [ 'prewatch', 'watch', 'postwatch' ]
+5 info prewatch RLTool-NodeVersion@0.0.0
+6 info watch RLTool-NodeVersion@0.0.0
 7 verbose unsafe-perm in lifecycle true
-8 info RLTool-NodeVersion@0.0.0 Failed to exec start script
-9 error RLTool-NodeVersion@0.0.0 start: `npm run watch & nodemon server/test_DB.js`
-9 error Exit status 127
-10 error Failed at the RLTool-NodeVersion@0.0.0 start script.
+8 info RLTool-NodeVersion@0.0.0 Failed to exec watch script
+9 error RLTool-NodeVersion@0.0.0 watch: `watchify client/app.js -o client/index.js -v`
+9 error Exit status 137
+10 error Failed at the RLTool-NodeVersion@0.0.0 watch script.
 10 error This is most likely a problem with the RLTool-NodeVersion package,
 10 error not with npm itself.
 10 error Tell the author that this fails on your system:
-10 error     npm run watch & nodemon server/test_DB.js
+10 error     watchify client/app.js -o client/index.js -v
 10 error You can get their info via:
 10 error     npm owner ls RLTool-NodeVersion
 10 error There is likely additional logging output above.
 11 error System Linux 3.14.13-c9
-12 error command "/home/ubuntu/.nvm/v0.10.35/bin/node" "/home/ubuntu/.nvm/v0.10.35/bin/npm" "start"
+12 error command "/home/ubuntu/.nvm/v0.10.35/bin/node" "/home/ubuntu/.nvm/v0.10.35/bin/npm" "run" "watch"
 13 error cwd /home/ubuntu/workspace
 14 error node -v v0.10.35
 15 error npm -v 1.4.28
