@@ -1,13 +1,23 @@
 <mvc:View
    controllerName="ch.soinwi.rltool.controller.App"
    xmlns="sap.m"
-   xmlns:mvc="sap.ui.core.mvc">
-    <Button
-        text="Hello! World"
-        press="onShowHello"/>
-    <Input
-        value="{/recipient/name}"
-        description="Hello {/recipient/name}"
-        valueLiveUpdate="true"
-        width = "60%"/>
+   xmlns:mvc="sap.ui.core.mvc"
+   displayBlock="true">
+    <App>
+        <pages>
+            <Page title="RLTool Main page">
+                <headerContent>
+                    <Button
+                        icon="sap-icon://hello-world"
+                        press="onOpenDialog"/>
+                </headerContent>
+                <content>
+                    <mvc:XMLView viewName="ch.soinwi.rltool.view.HelloPanel"/>
+                    <mvc:XMLView viewName="ch.soinwi.rltool.view.InvoiceList"/>
+                </content>
+            </Page>
+        </pages>
+        
+    </App>
+    
 </mvc:View>
