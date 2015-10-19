@@ -12,9 +12,10 @@
     "browserify-middleware": "^7.0.0",
     "express": "^4.13.3",
     "jquery": "^2.1.4",
+    "mongodb": "^2.0.46",
     "nodeunit": "^0.9.1",
+    "simple-odata-server": "^0.1.8",
     "socket.io": "~0.9.14",
-    "sqlite3": "^3.1.0",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
