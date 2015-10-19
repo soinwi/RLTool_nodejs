@@ -1,8 +1,9 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
     "sap/ui/model/json/JSONModel",
-    "ch/soinwi/rltool/controller/HelloDialog"
-], function(UIComponent, JSONModel, HelloDialog) {
+    "ch/soinwi/rltool/controller/HelloDialog",
+    "sap/ui/model/odata/v2/ODataModel"
+], function(UIComponent, JSONModel, HelloDialog, ODataModel) {
     "use strict";
     return UIComponent.extend("ch.soinwi.rltool.Component", {
         metadata: {
@@ -24,6 +25,9 @@ sap.ui.define([
             
             var invoiceModel = new JSONModel(jQuery.sap.getModulePath("ch.soinwi.rltool", "/Invoices.json"));
             this.setModel(invoiceModel, "invoice");
+            
+            var peopleModel = new ODataModel({serviceUrl: "https://rltool2-soinwi.c9.io/people"}, true);
+            this.setModel(peopleModel, "people");
             
             this.helloDialog = new HelloDialog();
         }

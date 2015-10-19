@@ -1,0 +1,25 @@
+<mvc:View
+    controllerName="ch.soinwi.rltool.controller.PeopleList"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <List
+        id="peopleList"
+        class="sapUiResponsiveMargin"
+        width="auto"
+        items="{
+            path: 'people>/people'
+        }">
+        <headerToolbar>
+            <Toolbar>
+                <Title text="People"/>
+                <ToolbarSpacer/>
+                
+            </Toolbar>
+        </headerToolbar>
+        <items>
+            <ObjectListItem
+                title="{people>firstName}"
+                />
+        </items>
+    </List>
+</mvc:View>
