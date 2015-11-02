@@ -18,6 +18,7 @@
         </headerToolbar>
         <items>
             <ObjectListItem
+                icon="sap-icon://person-placeholder"
                 title="{people>firstName}"
                 />
         </items>

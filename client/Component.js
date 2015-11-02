@@ -26,7 +26,7 @@ sap.ui.define([
             var invoiceModel = new JSONModel(jQuery.sap.getModulePath("ch.soinwi.rltool", "/Invoices.json"));
             this.setModel(invoiceModel, "invoice");
             
-            var peopleModel = new ODataModel({serviceUrl: "https://rltool2-soinwi.c9.io/people"}, true);
+            var peopleModel = new ODataModel({serviceUrl: "https://rltool2-soinwi.c9.io/odata"}, false);
             this.setModel(peopleModel, "people");
             
             this.helloDialog = new HelloDialog();
