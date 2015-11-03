@@ -21,5 +21,13 @@ angular.module('rltoolApp.peopleView', ['ngRoute', 'ODataResources'])
         }
         
         );
+        
+        $scope.detailView = function(person){
+          alert("person clicked: " + person.firstName);  
+        };
+        
+        $scope.addNew = function(){
+          alert("addnew clicked");  
+        };
     
 }]);

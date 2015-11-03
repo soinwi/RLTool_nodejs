@@ -28,3 +28,26 @@
   content: "";
   padding: 0;
 }
+
+table.people{
+  border-style: solid;
+  border-width: 1px;
+  border-collapse:collapse;
+  
+  
+}
+
+table.people td{
+
+  border-top-style: solid;
+  border-color: black;
+  border-width: 1px;
+  
+  margin: 0 2 0 2;
+}
+
+table.people th{
+  background-color: #CCCCCC;
+  
+  margin: 0 2 0 2;
+}
