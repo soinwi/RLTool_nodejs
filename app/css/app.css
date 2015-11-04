@@ -34,7 +34,12 @@ table.people{
   border-width: 1px;
   border-collapse:collapse;
   
-  
+}
+
+div.people{
+  max-height: 250px;
+  overflow: auto;
+  display: inline-block;
 }
 
 table.people td{
@@ -43,9 +48,13 @@ table.people td{
   border-bottom-style: solid;
   border-color: black;
   border-width: 1px;
+
+  
   
   margin: 0 2 0 2;
 }
+
+
 
 table.people th{
   background-color: #CCCCCC;

@@ -1,29 +1,97 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/home/ubuntu/.nvm/v0.10.35/bin/node',
 1 verbose cli   '/home/ubuntu/.nvm/v0.10.35/bin/npm',
-1 verbose cli   'run',
-1 verbose cli   'watch' ]
+1 verbose cli   'install' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.35
-4 verbose run-script [ 'prewatch', 'watch', 'postwatch' ]
-5 info prewatch RLTool-NodeVersion@0.0.0
-6 info watch RLTool-NodeVersion@0.0.0
-7 verbose unsafe-perm in lifecycle true
-8 info RLTool-NodeVersion@0.0.0 Failed to exec watch script
-9 error RLTool-NodeVersion@0.0.0 watch: `watchify client/app.js -o client/index.js -v`
-9 error Exit status 137
-10 error Failed at the RLTool-NodeVersion@0.0.0 watch script.
-10 error This is most likely a problem with the RLTool-NodeVersion package,
-10 error not with npm itself.
-10 error Tell the author that this fails on your system:
-10 error     watchify client/app.js -o client/index.js -v
-10 error You can get their info via:
-10 error     npm owner ls RLTool-NodeVersion
-10 error There is likely additional logging output above.
-11 error System Linux 3.14.13-c9
-12 error command "/home/ubuntu/.nvm/v0.10.35/bin/node" "/home/ubuntu/.nvm/v0.10.35/bin/npm" "run" "watch"
-13 error cwd /home/ubuntu/workspace
-14 error node -v v0.10.35
-15 error npm -v 1.4.28
-16 error code ELIFECYCLE
-17 verbose exit [ 1, true ]
+4 warn package.json RLTool-NodeVersion@0.0.0 No repository field.
+5 verbose readDependencies using package.json deps
+6 verbose install where, deps [ '/home/ubuntu/workspace',
+6 verbose install   [ 'async',
+6 verbose install     'backbone',
+6 verbose install     'body-parser',
+6 verbose install     'browserify-middleware',
+6 verbose install     'express',
+6 verbose install     'jquery',
+6 verbose install     'mongodb',
+6 verbose install     'nodeunit',
+6 verbose install     'simple-odata-server',
+6 verbose install     'socket.io',
+6 verbose install     'underscore',
+6 verbose install     'browserify',
+6 verbose install     'nodemon',
+6 verbose install     'bower',
+6 verbose install     'watchify' ] ]
+7 info preinstall RLTool-NodeVersion@0.0.0
+8 verbose readDependencies using package.json deps
+9 verbose already installed skipping backbone@^1.2.3 /home/ubuntu/workspace
+10 verbose already installed skipping body-parser@^1.14.0 /home/ubuntu/workspace
+11 verbose already installed skipping browserify-middleware@^7.0.0 /home/ubuntu/workspace
+12 verbose already installed skipping express@^4.13.3 /home/ubuntu/workspace
+13 verbose already installed skipping jquery@^2.1.4 /home/ubuntu/workspace
+14 verbose already installed skipping mongodb@^2.0.46 /home/ubuntu/workspace
+15 verbose already installed skipping nodeunit@^0.9.1 /home/ubuntu/workspace
+16 verbose already installed skipping simple-odata-server@^0.1.8 /home/ubuntu/workspace
+17 verbose already installed skipping socket.io@~0.9.14 /home/ubuntu/workspace
+18 verbose already installed skipping underscore@^1.8.3 /home/ubuntu/workspace
+19 verbose already installed skipping browserify@^11.2.0 /home/ubuntu/workspace
+20 verbose already installed skipping nodemon@^1.7.1 /home/ubuntu/workspace
+21 verbose already installed skipping bower@^1.3.1 /home/ubuntu/workspace
+22 verbose already installed skipping watchify@^3.4.0 /home/ubuntu/workspace
+23 verbose already installed skipping async@~0.2.8 /home/ubuntu/workspace
+24 silly resolved []
+25 info build /home/ubuntu/workspace
+26 verbose linkStuff [ false, false, false, '/home/ubuntu' ]
+27 info linkStuff RLTool-NodeVersion@0.0.0
+28 verbose linkBins RLTool-NodeVersion@0.0.0
+29 verbose linkMans RLTool-NodeVersion@0.0.0
+30 verbose rebuildBundles RLTool-NodeVersion@0.0.0
+31 verbose rebuildBundles [ '.bin',
+31 verbose rebuildBundles   'async',
+31 verbose rebuildBundles   'backbone',
+31 verbose rebuildBundles   'body-parser',
+31 verbose rebuildBundles   'bower',
+31 verbose rebuildBundles   'browserify',
+31 verbose rebuildBundles   'browserify-middleware',
+31 verbose rebuildBundles   'express',
+31 verbose rebuildBundles   'jaydata',
+31 verbose rebuildBundles   'jquery',
+31 verbose rebuildBundles   'mongodb',
+31 verbose rebuildBundles   'nodemon',
+31 verbose rebuildBundles   'nodeunit',
+31 verbose rebuildBundles   'simple-odata-server',
+31 verbose rebuildBundles   'socket.io',
+31 verbose rebuildBundles   'underscore',
+31 verbose rebuildBundles   'watchify' ]
+32 verbose rebuild bundle /home/ubuntu/workspace/node_modules/jaydata
+33 info build /home/ubuntu/workspace/node_modules/jaydata
+34 info preinstall jaydata@1.3.6
+35 verbose linkStuff [ false, false, false, '/home/ubuntu/workspace/node_modules' ]
+36 info linkStuff jaydata@1.3.6
+37 verbose linkBins jaydata@1.3.6
+38 verbose linkMans jaydata@1.3.6
+39 verbose rebuildBundles jaydata@1.3.6
+40 verbose rebuildBundles [ 'acorn', 'datajs', 'q', 'qs', 'url', 'xmldom' ]
+41 info install jaydata@1.3.6
+42 info postinstall jaydata@1.3.6
+43 info install RLTool-NodeVersion@0.0.0
+44 info postinstall RLTool-NodeVersion@0.0.0
+45 verbose unsafe-perm in lifecycle true
+46 info RLTool-NodeVersion@0.0.0 Failed to exec postinstall script
+47 error RLTool-NodeVersion@0.0.0 postinstall: `bower install`
+47 error Exit status 1
+48 error Failed at the RLTool-NodeVersion@0.0.0 postinstall script.
+48 error This is most likely a problem with the RLTool-NodeVersion package,
+48 error not with npm itself.
+48 error Tell the author that this fails on your system:
+48 error     bower install
+48 error You can get their info via:
+48 error     npm owner ls RLTool-NodeVersion
+48 error There is likely additional logging output above.
+49 error System Linux 4.2.0-c9
+50 error command "/home/ubuntu/.nvm/v0.10.35/bin/node" "/home/ubuntu/.nvm/v0.10.35/bin/npm" "install"
+51 error cwd /home/ubuntu/workspace
+52 error node -v v0.10.35
+53 error npm -v 1.4.28
+54 error code ELIFECYCLE
+55 verbose exit [ 1, true ]

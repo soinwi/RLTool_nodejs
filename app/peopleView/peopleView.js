@@ -1,4 +1,4 @@
-angular.module('rltoolApp.peopleView', ['ngRoute', 'ODataResources'])
+angular.module('rltoolApp.peopleView', ['ngRoute', 'rltoolApp.peopleService'])
 
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/people', {
@@ -8,16 +8,10 @@ angular.module('rltoolApp.peopleView', ['ngRoute', 'ODataResources'])
 
 }])
 
-.controller('peopleView.peopleViewController', ['$scope', '$odataresource', function($scope, $odataresource) {
-
-
-
-    var peopleResource = $odataresource('/odata/people/', {}, {}, {
-        odatakey: '_id'
-    });
+.controller('peopleView.peopleViewController', ['$scope', 'People', function($scope, People) {
 
     var updatePeopleList = function() {
-        $scope.people = peopleResource.odata().query(
+        $scope.people = People.odata().query(
             function() {},
             function(e) {
                 alert("error getting people data from /odata/people/");
@@ -38,7 +32,7 @@ angular.module('rltoolApp.peopleView', ['ngRoute', 'ODataResources'])
 
     $scope.addNew = function() {
 
-        var p = new peopleResource();
+        var p = new People();
 
         p.firstName = "max";
         p.lastName = "mustermann";

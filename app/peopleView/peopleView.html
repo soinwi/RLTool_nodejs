@@ -1,6 +1,6 @@
 <div>
-    
-        
+
+    <div class="people">
         <table class="people">
             <tr>
                 <th>Firstname</th>
@@ -8,22 +8,29 @@
                 <th>Birthdate</th>
                 <th>ID</th>
                 <th>Delete</th>
+                <th>Edit</th>
             </tr>
             <tr ng-repeat="person in people |filter:query">
                 <td>{{person.firstName}}</td>
                 <td>{{person.lastName}}</td>
                 <td>{{person.birthDate}}</td>
                 <td>{{person._id}}</td>
-                <td><button ng-click="deletePerson(person)">Delete</button></td>
+                <td>
+                    <button ng-click="deletePerson(person)">Delete</button>
+                </td>
+                <td>
+                    <button ng-click="detailView(person)">Edit</button>
+                </td>
             </tr>
             <tr>
                 <td colspan="3">count: {{people.length}}</td>
             </tr>
-    </table>
+        </table>
+    </div>
     <div class="searchbox">
-            Search:
-            <input ng-model="query" />
-        </div>
-    
+        Search:
+        <input ng-model="query" />
+    </div>
+
     <button ng-click="addNew()">Add</button>
 </div>
