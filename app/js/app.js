@@ -2,7 +2,8 @@
 var rltoolApp = angular.module('rltoolApp', [
     'ngRoute',
     
-    'rltoolApp.peopleView'
+    'rltoolApp.peopleView',
+    'rltoolApp.personDetailView'
     ]);
     
     rltoolApp.config(['$routeProvider',
