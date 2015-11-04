@@ -40,6 +40,7 @@ table.people{
 table.people td{
 
   border-top-style: solid;
+  border-bottom-style: solid;
   border-color: black;
   border-width: 1px;
   
@@ -50,4 +51,8 @@ table.people th{
   background-color: #CCCCCC;
   
   margin: 0 2 0 2;
+}
+
+div.searchbox {
+  margin-top: 1em;
 }
